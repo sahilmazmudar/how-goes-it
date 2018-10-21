@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+	"name": "How Goes It",
+	"version": "1.0",
+	"description": "Performs a sentiment analysis of the stuff you read.",
+	"content_scripts": 
+	[
+		{
+			"matches": ["*://*/*"],
+			"js": ["popup.js"],
+			"run_at": "document_end"
+		}
+	],
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment"
+	]
+}
+
